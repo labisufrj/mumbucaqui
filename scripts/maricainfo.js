@@ -16,8 +16,8 @@ function addCep() {
     ceps.forEach(function(cep, index){
         geocoder.geocode( { 'address': cep}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                lat = getLat();
-                lng = getLng();
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
                 addMarker(lat, lng);
             }
         
@@ -26,7 +26,6 @@ function addCep() {
                 return 0
             }
         });
-
     });
 }
  
@@ -47,14 +46,4 @@ function getCEPList() {
     ceps = input.split(", ");
     console.log(ceps);
     return ceps
-}
-
-function getLat() {
-    let lat = results[0].geometry.location.lat();
-    return lat
-}
-
-function getLng() {
-    let lng = results[0].geometry.location.lng();
-    return lng
 }
