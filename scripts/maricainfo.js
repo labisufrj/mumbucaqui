@@ -4,7 +4,7 @@ let mapa;
 function init() {
     // Função da API do Google de inicialização do mapa
     mapa = new google.maps.Map(pegarPorID("map"), {
-        zoom: 6,
+        zoom: 12,
         center: new google.maps.LatLng(-22.9163,-42.822),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
