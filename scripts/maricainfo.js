@@ -1,15 +1,15 @@
-let map;
+let mapa;
 
 function init() {
-    map = new google.maps.Map(getIdContent("map"), {
+    mapa = new google.maps.Map(pegarPorID("map"), {
         zoom: 6,
         center: new google.maps.LatLng(-22.9163,-42.822),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 }
 
-function addCep() {
-    let ceps = getCEPList();
+function adicionarCep() {
+    let ceps = pegarListaCEP();
     let lat, lng;
     let geocoder = new google.maps.Geocoder();
     
@@ -18,7 +18,7 @@ function addCep() {
             if (status == google.maps.GeocoderStatus.OK) {
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
-                addMarker(lat, lng);
+                adicionarMarcador(lat, lng);
             }
         
             else {
@@ -29,21 +29,20 @@ function addCep() {
     });
 }
  
-function addMarker(lat, lng) {
-    let marker = new google.maps.Marker({
+function adicionarMarcador(lat, lng) {
+    let marcador = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),
-        map: map
+        map: mapa
     });
 }
 
-function getIdContent(id) {
-    let element = document.getElementById(id);
-    return element
+function pegarPorID(id) {
+    let elemento = document.getElementById(id);
+    return elemento
 }
 
-function getCEPList() {
-    let input = getIdContent("cep").value;
+function pegarListaCEP() {
+    let input = pegarPorID("cep").value;
     ceps = input.split(", ");
-    console.log(ceps);
     return ceps
 }
