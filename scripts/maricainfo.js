@@ -1,9 +1,6 @@
 // É necessário inicializar o mapa como variável global
 let mapa;
 
-//Inicializando o axios
-const axios = require("axios");
-
 function init() {
     // Função da API do Google de inicialização do mapa
     mapa = new google.maps.Map(pegarPorID("map"), {
@@ -59,22 +56,4 @@ function pegarListaCEP() {
     ceps = input.split(", ");
     return ceps
 }
-
-// Funcao para transformar os CNPJs do input em CEPs
-function trocaCnpjCEP(cnpj){
-    // Transforma o CNPJ em CEP
-
-  for(i=0;i<cnpj.length;i++){
-
-    var url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj[i];
-    // Faz a requisicao http na API receitaws
-    
-    axios.get(url).then(response => {
-                this.results = response.data;
-                var cep = results.data.cep;
-                return cep
-                
-              })
-            }
-          }
   
