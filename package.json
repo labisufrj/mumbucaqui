@@ -1,0 +1,23 @@
+{
+  "name": "maricainfo",
+  "version": "1.0.0",
+  "description": "Aplicativo Web para o Banco Comunitário de Maricá",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labisufrj/maricainfo.git"
+  },
+  "author": "Gabriel Mendes de Moraes, Matheus Torres de Aguiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labisufrj/maricainfo/issues"
+  },
+  "homepage": "https://github.com/labisufrj/maricainfo#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3"
+  }
+}
