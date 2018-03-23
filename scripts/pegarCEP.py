@@ -1,7 +1,8 @@
 import requests
 import json
 
-#Codigo que pega o CEP da empresa baseado em seu CNPJ
+# Código que pega o CEP da empresa de acordo com seu CNPJ.
+
 def pegaCEP(cnpj):
     cnpj = str(cnpj)
     url = "http://receitaws.com.br/v1/cnpj/" + cnpj

@@ -11,5 +11,5 @@ app.get("/", function(req, res){
 
 // Inicializa o servidor na porta 8000
 app.listen(8000, function(){
-	console.log("Server Rodando");
+	console.log("Server Rodando na porta 8000");
 });

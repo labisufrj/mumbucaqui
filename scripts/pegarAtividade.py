@@ -1,7 +1,7 @@
 import requests
 import json
 
-//Codigo que pega a Atividade da empresa baseado em seu cnpj
+# Código que pega a Atividade da empresa de acordo com seu CNPJ.
 
 def pegaAtividade(cnpj):
     cnpj = str(cnpj)

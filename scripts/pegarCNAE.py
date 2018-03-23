@@ -1,7 +1,8 @@
 import requests
 import json
 
-#Codigo que pega o CNAE da empresa baseado em seu CNPJ
+# Código que pega o CNAE da empresa de acordo com seu CNPJ.
+
 def pegaCNAE(cnpj):
     cnpj = str(cnpj)
     url = "http://receitaws.com.br/v1/cnpj/" + cnpj
