@@ -5,6 +5,7 @@ var app = express();
 // Define diretório base como root de conteúdo estático 
 app.use(express.static(__dirname));
 
+// Renderiza a página principal
 app.get("/", function(req, res){
 	res.render("home.ejs");
 });
