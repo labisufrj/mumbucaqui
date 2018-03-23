@@ -2,7 +2,7 @@
 var express = require("express");
 var app = express();
 
-// Denife diretório base como root de conteúdo estático 
+// Define diretório base como root de conteúdo estático 
 app.use(express.static(__dirname));
 
 /*
