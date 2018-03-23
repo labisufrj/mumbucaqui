@@ -7,7 +7,7 @@ def pegaAtividade(cnpj):
     cnpj = str(cnpj)
     url = "http://receitaws.com.br/v1/cnpj/" + cnpj
     r = requests.get(url)
-    jayson = r.json()
-    atividade = jayson['atividade_principal'][0]['text']
+    json = r.json()
+    atividade = json['atividade_principal'][0]['text']
     atividade = atividade.encode('ascii','ignore')
     return atividade
