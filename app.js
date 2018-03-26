@@ -29,7 +29,9 @@ app.get("/pegarCEP", function(req, res){
 	request(redirect, function(error, response, body){
 		// Caso não haja erro, e o browser retorne status code 200, continuar operação
 		if(!error && response.statusCode == 200){
+			// Transforma conteúdo HTML em JSON
 			let data = JSON.parse(body);
+			// Pega a parte do JSON referente ao CEP
 			let cep = data["cep"];
 			res.redirect(url.format({
 					pathname: "/",
