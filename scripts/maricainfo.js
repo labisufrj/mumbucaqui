@@ -3,37 +3,44 @@ let mapa;
 
 function init() {
     // Função da API do Google de inicialização do mapa
-    mapa = new google.maps.Map(pegarPorID("map"), {
-        zoom: 12,
+    mapa = new google.maps.Map(map, {
+        zoom: 15,
         center: new google.maps.LatLng(-22.9163,-42.822),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+    adicionarCEP();
 }
 
 // Função chamada ao confirmar inserção de CEPs no input
-function adicionarCep() {
+function adicionarCEP() {
     // Função de tratamento do input, retornando uma lista
-    let ceps = pegarListaCEP();
-    let lat, lng;
-    let geocoder = new google.maps.Geocoder();
+    let cep = pegarQueryCEP();
+
+    // Executa apenas se houver CEP definido na query
+    if (cep) {
+        let lat, lng;
+        let geocoder = new google.maps.Geocoder();
     
-    // Após a separação dos CEPs em uma lista, essa função transforma cada CEP em um par latitude-longitude
-    ceps.forEach(function(cep, index){
+        // Após a separação dos CEPs em uma lista, essa função transforma cada CEP em um par latitude-longitude
         geocoder.geocode( { 'address': cep}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
+                // Deixa o centro do mapa no lugar marcado (terá que ser tirado após implementar múltiplos marcadores)
+                mapa.setCenter({lat: lat, lng: lng});
                 // Após conversão de CEP em lat-lng, é adicionado o marcador
                 adicionarMarcador(lat, lng);
             }
         
+            // Erro no caso de input inválido
             else {
-                // Erro no caso de input inválido
-                alert("CEP " + (index + 1) + " Inválido!");
+                alert("CEP Inválido!");
                 return 0
             }
-        });
-    });
+        });  
+    }
+    
 }
  
 // Função de adição de marcador no mapa
@@ -44,16 +51,12 @@ function adicionarMarcador(lat, lng) {
     });
 }
 
-// Getter de elementos por ID
-function pegarPorID(id) {
-    let elemento = document.getElementById(id);
-    return elemento
-}
-
 // Função que isola CEPs que são separados por vírgulas no input em diferentes elementos de uma lista
-function pegarListaCEP() {
-    let input = pegarPorID("cep").value;
-    ceps = input.split(", ");
-    return ceps
+function pegarQueryCEP() {
+    let url_query = window.location.href;
+    let url = new URL(url_query);
+    let cep = url.searchParams.get("cep");
+
+    return cep
 }
   
