@@ -14,6 +14,16 @@ app.set("view engine", "ejs");
 // Define diretório base como root de conteúdo estático 
 app.use(express.static(__dirname));
 
+// Remove caracteres não numéricos do CNPJ
+function limpaCNPJ(cnpj){
+	let temp = cnpj;
+	temp = temp.split(".").join("");
+	temp = temp.split("/").join("");
+	temp = temp.split("-").join("");
+
+	return temp
+}
+
 // Renderiza a página principal
 app.get("/", function(req, res){
 	res.render("home");
@@ -23,6 +33,8 @@ app.get("/", function(req, res){
 app.get("/pegarCEP", function(req, res){
 	// Pega o cnpj da query, passada pelo form da página inicial
 	let cnpj = req.query.cnpj;
+	// Remove caracteres não numéricos do CNPJ
+	cnpj = limpaCNPJ(cnpj);
 	// Define o endereço da API
 	let redirect = "http://receitaws.com.br/v1/cnpj/" + cnpj;
 	// Faz a requisição
