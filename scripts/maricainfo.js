@@ -21,12 +21,16 @@ function adicionarCEP() {
     if (cep) {
         let lat, lng;
         let geocoder = new google.maps.Geocoder();
+        console.log(cep);
+
     
         // Após a separação dos CEPs em uma lista, essa função transforma cada CEP em um par latitude-longitude
-        geocoder.geocode( { 'address': cep}, function(results, status) {
+        geocoder.geocode( { 'address': cep, 'region':'BR'}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
+            	console.log(results);
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
+                console.log(lat,lng);
                 // Deixa o centro do mapa no lugar marcado (terá que ser tirado após implementar múltiplos marcadores)
                 mapa.setCenter({lat: lat, lng: lng});
                 // Após conversão de CEP em lat-lng, é adicionado o marcador
