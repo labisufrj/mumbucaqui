@@ -1,0 +1,10 @@
+#mapa_alimenticio, #mapa_comercio, #mapa_farmacos, #mapa_geral {
+	height: 400px;
+	width: 60%;
+	margin: 20px auto;
+}
+
+.bg-dark {
+	background-color: #F64646 !important;
+}
+  
