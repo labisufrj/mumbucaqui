@@ -1,7 +1,7 @@
-#mapa_alimenticio, #mapa_comercio, #mapa_farmacos, #mapa_geral {
+#mapa {
 	height: 400px;
 	width: 60%;
-	margin: 20px auto;
+	margin: 100px auto;
 }
 
 .bg-dark {
