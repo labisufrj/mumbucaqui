@@ -8,7 +8,11 @@
 	margin-bottom: 10px;
 }
 
-.bg-dark {
+#header {
 	background-color: #F64646 !important;
+}
+
+#brand {
+	font-weight: bold;
 }
   
