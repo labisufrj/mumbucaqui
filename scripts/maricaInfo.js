@@ -17,6 +17,10 @@ document.getElementById("comercio").addEventListener("click", function(){
     adicionarMarcadorComercio();
 });
 
+document.getElementById("limpar").addEventListener("click", function(){
+    resetMap();
+});
+
 
 function init() {
     // Função da API do Google de inicialização do mapa
@@ -27,7 +31,7 @@ function init() {
     });
 }
  
-// Função de adição de marcador no mapa
+// Função de adição de marcador de alimentícios no mapa
 function adicionarMarcadorAlimenticio() {
 
     resetMap();
@@ -138,6 +142,7 @@ function adicionarMarcadorAlimenticio() {
     });
 }
 
+// Função de adição de marcadores de comércios em geral no mapa
 function adicionarMarcadorComercio() {
 
     resetMap();
@@ -321,6 +326,7 @@ function adicionarMarcadorComercio() {
     });
 } 
 
+// Função de adição de marcadores de farmácias no mapa
 function adicionarMarcadorFarmacos() {
 
     resetMap();
@@ -406,6 +412,7 @@ function adicionarMarcadorFarmacos() {
     });
 } 
 
+// Função de adição de marcadores de todos os estabelecimentos no mapa
 function adicionarMarcadorGeral() {
 
     resetMap();
@@ -780,6 +787,7 @@ function adicionarMarcadorGeral() {
     });
 } 
 
+// Função de reinicialização do mapa
 function resetMap(){
     map = new google.maps.Map(document.getElementById('mapa'), {
         zoom: 12,

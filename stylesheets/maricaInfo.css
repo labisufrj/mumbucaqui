@@ -4,6 +4,10 @@
 	margin: 100px auto;
 }
 
+#botoes {
+	margin-bottom: 10px;
+}
+
 .bg-dark {
 	background-color: #F64646 !important;
 }

@@ -5,7 +5,8 @@
  		<title>MumbucAqui</title>
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	    <link rel="stylesheet" href="stylesheets/maricaInfo.css">
-  		<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+			<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+			<link rel="stylesheet" href="stylesheets/bootstrap-grid.min.css">
 		  
 	</head>
 	<body onload="init()">
@@ -24,13 +25,18 @@
 
 		<div id="mapa"></div>
 
-		<button id="geral">Todos Estabelecimentos</button>
-		<button id="alimentos">Alimentícios</button>
-		<button id="farmacias">Farmácias</button>
-		<button id="comercio">Comércio</button>
+		<div id="botoes">
+			<button id="geral">Todos Estabelecimentos</button>
+			<button id="alimentos">Alimentícios</button>
+			<button id="farmacias">Farmácias</button>
+			<button id="comercio">Comércio</button>
+		</div>
+		
+		<button id="limpar">Limpar mapa</button>
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDywMxq9jcpVtKXfZuqiuTsHVXUO6e3I7g"></script>
 		<script type="application/javascript" src="scripts/maricaInfo.js"></script>
+		<script type="application/javascript" src="scripts/bootstrap.min.js"></script>
 		
 	
 	</body>
