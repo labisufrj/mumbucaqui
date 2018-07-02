@@ -17,10 +17,6 @@ document.getElementById("comercio").addEventListener("click", function(){
     adicionarMarcadorComercio();
 });
 
-document.getElementById("limpar").addEventListener("click", function(){
-    resetMap();
-});
-
 
 function init() {
     // Função da API do Google de inicialização do mapa

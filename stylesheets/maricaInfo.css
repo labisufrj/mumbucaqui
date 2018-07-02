@@ -1,11 +1,6 @@
 #mapa {
-	height: 400px;
-	width: 60%;
-	margin: 100px auto;
-}
-
-#botoes {
-	margin-bottom: 10px;
+	height: 100%;
+	width: 100%;
 }
 
 #header {
@@ -16,9 +11,11 @@
 	font-weight: bold;
 }
 
-button {
-	background-color: #FFA400;
-	color: white;
-	font-weight: bold;
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
 }
-  
+
+.nav-item {
+	color: white;
+}
