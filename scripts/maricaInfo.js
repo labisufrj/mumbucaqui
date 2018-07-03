@@ -38,11 +38,6 @@ function adicionarMarcadorAlimenticio() {
     });
 
     marcador = new google.maps.Marker({
-        position: new google.maps.LatLng(-22.9117307, -42.8051728),
-        map: map
-    });
-
-    marcador = new google.maps.Marker({
         position: new google.maps.LatLng(-22.941697, -42.9766649),
         map: map
     });
