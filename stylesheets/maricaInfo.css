@@ -1,0 +1,21 @@
+#mapa {
+	height: 100%;
+	width: 100%;
+}
+
+#header {
+	background-color: #F64646 !important;
+}
+
+#brand {
+	font-weight: bold;
+}
+
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
+}
+
+.nav-item {
+	color: white;
+}
